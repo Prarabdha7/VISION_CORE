@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import numpy as np
 from fastapi import FastAPI, Response
+from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 import pydantic
 import os
@@ -91,7 +92,8 @@ def generate_frames():
         
         # Portrait extraction condition (User vs Background thresholding)
         # Category mask output values run near 1.0 (or 255 scaled) for human foreground pixels
-        condition = np.stack((category_mask,) * 3, axis=-1) > 0.1
+        mask_3d = cv2.merge([category_mask, category_mask, category_mask]) 
+        condition = mask_3d > 0.1
         
         fg_zone = frame.copy()
         bg_zone = frame.copy()
@@ -105,7 +107,7 @@ def generate_frames():
         else:
             processed_bg = bg_zone
             
-        output_frame = np.where(condition, fg_zone, processed_bg)
+        output_frame = np.where(condition, processed_bg, fg_zone)
         
         # Encode back to JPEG for stream output
         ret, buffer = cv2.imencode('.jpg', output_frame)
@@ -120,7 +122,7 @@ def generate_frames():
 
 @app.get("/video_feed")
 def video_feed():
-    return Response(generate_frames(), media_type="multipart/x-mixed-replace; boundary=frame")
+    return StreamingResponse(generate_frames(), media_type="multipart/x-mixed-replace; boundary=frame")
 
 @app.post("/set_filter")
 def set_filter(payload: FilterUpdateRequest):
