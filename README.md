@@ -39,12 +39,12 @@ The application is structured as a decentralized, edge-compute ecosystem communi
 ## Visual Preview and Dashboards
 
 ### Distributed Cluster Panel (Normal Pass)
-![alt text](<public/Screenshot 2026-06-08 at 4.43.37 PM.png>)
+![Distributed Cluster Panel (Normal Pass)](<frontend/public/Screenshot 2026-06-08 at 4.43.37 PM.png>)
 
 ### Real-Time Filter States
 | Background Dimmer | Gaussian Blur | Pixel Mosaic |
 |---|---|---|
-| ![alt text](<public/Screenshot 2026-06-08 at 4.53.54 PM.png>) | ![alt text](<public/Screenshot 2026-06-08 at 4.43.49 PM.png>) | ![alt text](<public/Screenshot 2026-06-08 at 4.54.00 PM.png>) |
+| ![Background Dimmer](<frontend/public/Screenshot 2026-06-08 at 4.53.54 PM.png>) | ![Gaussian Blur](<public/Screenshot 2026-06-08 at 4.43.49 PM.png>) | ![Pixel Mosaic](<frontend/public/Screenshot 2026-06-08 at 4.54.00 PM.png>) |
 
 ---
 
