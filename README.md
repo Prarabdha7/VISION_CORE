@@ -44,7 +44,7 @@ The application is structured as a decentralized, edge-compute ecosystem communi
 ### Real-Time Filter States
 | Background Dimmer | Gaussian Blur | Pixel Mosaic |
 |---|---|---|
-| ![Background Dimmer](<frontend/public/Screenshot 2026-06-08 at 4.53.54 PM.png>) | ![Gaussian Blur](<public/Screenshot 2026-06-08 at 4.43.49 PM.png>) | ![Pixel Mosaic](<frontend/public/Screenshot 2026-06-08 at 4.54.00 PM.png>) |
+| ![Background Dimmer](<frontend/public/Screenshot 2026-06-08 at 4.53.54 PM.png>) | ![Gaussian Blur](<frontend/public/Screenshot 2026-06-08 at 4.43.49 PM.png>) | ![Pixel Mosaic](<frontend/public/Screenshot 2026-06-08 at 4.54.00 PM.png>) |
 
 ---
 
