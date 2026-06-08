@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// !!! CHANGE THIS IP TO MATCH YOUR ASUS TUF LOCAL NETWORK IP !!!
-const BACKEND_IP = "192.168.1.19"; 
+const BACKEND_IP = "localhost"; // Change this to the actual IP address of Machine A if not running locally
 const BACKEND_URL = `http://${BACKEND_IP}:8000`;
 
 function App() {
@@ -121,12 +120,12 @@ function App() {
           {/* Diagnostics Architecture Info Card Box */}
           <div className="bg-gray-900/30 border border-gray-800/50 rounded-3xl p-5 font-mono text-[11px] text-gray-500 flex flex-col gap-2">
             <div className="flex justify-between border-b border-gray-800/80 pb-2">
-              <span>NODE_A RX (ASUS):</span>
-              <span className="text-gray-400">NVIDIA RTX 3050 CUDA</span>
+              <span>NODE_A RX :</span>
+              <span className="text-gray-400">Machine A</span>
             </div>
             <div className="flex justify-between border-b border-gray-800/80 pb-2">
-              <span>NODE_B TX (MAC):</span>
-              <span className="text-gray-400">APPLE M4 SILICON</span>
+              <span>NODE_B TX :</span>
+              <span className="text-gray-400">Machine B</span>
             </div>
             <div className="flex justify-between">
               <span>PIPELINE DUCT:</span>
@@ -139,7 +138,6 @@ function App() {
 
       {/* Footer */}
       <footer className="max-w-7xl w-full mx-auto text-center text-[10px] text-gray-600 font-mono uppercase tracking-widest border-t border-gray-900 pt-4">
-        Distributed Cluster System Engine // 2026
       </footer>
     </div>
   );
